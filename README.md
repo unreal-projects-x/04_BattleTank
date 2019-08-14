@@ -13,5 +13,6 @@ Ben Tristem
 
 Click here to find out more about the course, and how we build these assets step-by-step.
 
-Lecture List
+Lecture List;-
+
 1> BT01 Intro, Notes & Assets
