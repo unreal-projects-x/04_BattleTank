@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "TankAimingComponent.h"
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"
 
@@ -12,6 +13,9 @@ class BATTLETANK_API ATank : public APawn
 	GENERATED_BODY()
 public:
 	void AimAt(FVector HitLocation);
+
+protected:
+	UTankAimingComponent* TankAimingComponent = nullptr;
 
 private:
 	// Sets default values for this pawn's properties
