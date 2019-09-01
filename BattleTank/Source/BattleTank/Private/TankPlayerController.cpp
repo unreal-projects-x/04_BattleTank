@@ -2,6 +2,7 @@
 
 #include "TankPlayerController.h"
 #include "BattleTank.h"
+#include "Tank.h"
 #include "Engine/World.h"
 
 void ATankPlayerController::BeginPlay()
@@ -35,7 +36,6 @@ ATank* ATankPlayerController::GetControlledTank() const
 void ATankPlayerController::AimTowardsCrosshair()
 {
 	if (!GetControlledTank()) { return; }//*mine* there is obviously no sence in aiming crosshair towards the screen if we arent controlling tank
-
 	FVector HitLocation; // out parameter
 	if (GetSightRayHitlocation(HitLocation)) //Has"Side-effect", is going to line trace
 	{
