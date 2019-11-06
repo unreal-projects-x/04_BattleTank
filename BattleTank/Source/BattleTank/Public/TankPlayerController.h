@@ -22,10 +22,13 @@ public:
 	//start the tank moving the barrel so that a shot would hit where 
 	//the crosshair intersects the world
 	
+protected:
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+	ATank* GetControlledTank() const;
 
 
 private:
-	ATank* GetControlledTank() const;
+	
 	UPROPERTY(EditDefaultsOnly)
 	float CrossHairXLocation = 0.5;
 	UPROPERTY(EditDefaultsOnly)

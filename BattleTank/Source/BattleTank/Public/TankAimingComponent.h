@@ -7,6 +7,15 @@
 #include "Components/StaticMeshComponent.h"
 #include "TankAimingComponent.generated.h"
 
+//enum for aimimng states
+UENUM()
+enum class EFiringStatus : uint8
+{
+	Locked,
+	Aiming,
+	Reloading
+};
+
 //Forward Declaration
 class UTankBarrel; 
 //Holds barrel's properties and Elevate method
@@ -27,10 +36,17 @@ public:
 
 	void AimAt(FVector HitLocation, float LaunchSpeed);
 
+protected:
+	UPROPERTY(BlueprintReadOnly, Category = "Status")
+	EFiringStatus FiringStatus = EFiringStatus::Aiming;
+
 private:
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
 	
+	
+
 	void MoveBarrelTowards(FVector AimDirection);
+	
 	
 };
